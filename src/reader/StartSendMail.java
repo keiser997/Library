@@ -34,6 +34,8 @@ public class StartSendMail extends HttpServlet {
     }
 	public void destroy(){
 		th.stop();
+		
+		
     	System.out.println("System Prompt stoped successfully");
 	}
 }
