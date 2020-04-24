@@ -38,7 +38,7 @@ public class StartSendMail extends HttpServlet {
 	}
 }
 
-class SendMail implements Runnable {
+class SendMail implements Runnable {//此处可配置发邮件的各种属性
 	private static String from = "2942014051@qq.com";
     private static String user = "Mandarin Online Library System";
     private static String password = "oovblnxdeidhdceb"; //smtp协议的账户授权码
