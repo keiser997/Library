@@ -60,6 +60,8 @@ class SendMail implements Runnable {
 		}
   	}
   	//查询LendReturn表，若未归还书本的最后期限等于后天，则对相应用户发送提示邮件
+  	
+  	
     public void systemPrompt() {
     	// 计算后天日期并转化为数据库表中最后期限对应格式
     	LocalDate now = LocalDate.now();
