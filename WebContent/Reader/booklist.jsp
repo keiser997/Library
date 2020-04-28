@@ -127,6 +127,15 @@
                         y.value = null;
                         document: reserve.submit();
                     }
+                    else {
+                    	var value = btn.tagName;
+                        var x = document.getElementById("bookid");
+                        x.value = "null";
+                        var y = document.getElementById("barcodeid");
+                        y.value = null;
+                        document: reserve.submit();
+                    }
+                    
                 }
             </script>
             <script type="text/javascript">
@@ -169,11 +178,13 @@
                         String barcode_id = request.getParameter("barcodeid");
                         String book_id = request.getParameter("bookid");                     
                         if(book_id != null){
-                        	String account = (String)session.getAttribute("account");
-                        	if(reader_imp.appointment(book_id,account))
-                        		out.print("<script>function showMessage1() {alert('reserve successful');} showMessage1()</script>");
-                        	else
-                        		out.print("<script>function showMessage2() {alert('The book is on reserve!!');} showMessage2()</script>");
+                        	if(!book_id.equals("null")) {
+	                        	String account = (String)session.getAttribute("account");
+	                        	if(reader_imp.appointment(book_id,account))
+	                        		out.print("<script>function showMessage1() {alert('reserve successful');} showMessage1()</script>");
+	                        	else
+	                        		out.print("<script>function showMessage2() {alert('The book is on reserve!!');} showMessage2()</script>");
+	                        }
                         }
                         if(book_information == null)
                         	book_information = "";
